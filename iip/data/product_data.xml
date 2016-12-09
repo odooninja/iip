@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--<record id="product_category_all" model="product.category">-->
+            <!--<field name="name">Category1</field>-->
+        <!--</record>-->
+        <record id="product_category_01" model="product.category">
+            <!--<field name="" ref="product.product_category_01"/>-->
+            <field name="name">Jars for cosmetics</field>
+        </record>
+        <record id="product_category_02" model="product.category">
+
+            <field name="name">Bottles and Closures</field>
+        </record>
+        <record id="product_category_03" model="product.category">
+
+            <field name="name">Mirror Fixations</field>
+        </record>
+        <record id="product_category_04" model="product.category">
+
+            <field name="name">Corner Protection</field>
+        </record>
+
+
+
+        <record id="product_attribute_2" model="product.attribute">
+            <field name="name">Brimful Volume(ml)</field>
+        </record>
+         <record id="product_attribute_3" model="product.attribute">
+            <field name="name">ART Nr</field>
+        </record>
+         <record id="product_attribute_4" model="product.attribute">
+            <field name="name">Diameter Jar(mm)</field>
+        </record>
+        <record id="product_attribute_4" model="product.attribute">
+            <field name="name">Diameter Cover(mm)</field>
+        </record>
+         <record id="product_attribute_5" model="product.attribute">
+            <field name="name">Total Height(mm)</field>
+        </record>
+         <record id="product_attribute_6" model="product.attribute">
+            <field name="name">Material Jar</field>
+        </record>
+         <record id="product_attribute_7" model="product.attribute">
+            <field name="name">M.O.Q</field>
+        </record>
+         <record id="product_attribute_8" model="product.attribute">
+            <field name="name">Type Of Jar</field>
+        </record>
+         <record id="product_attribute_9" model="product.attribute">
+            <field name="name">Type Of Cover</field>
+        </record>
+         <record id="product_attribute_10" model="product.attribute">
+            <field name="name">Sealing Disc in PP</field>
+        </record>
+         <record id="product_attribute_11" model="product.attribute">
+            <field name="name">Sealing inside cover</field>
+        </record>
+         <record id="product_attribute_12" model="product.attribute">
+            <field name="name">Pressure Sensitive Sealing</field>
+        </record>
+         <record id="product_attribute_13" model="product.attribute">
+            <field name="name">Benaming</field>
+        </record>
+         <record id="product_attribute_14" model="product.attribute">
+            <field name="name">Afmeting</field>
+        </record>
+         <record id="product_attribute_15" model="product.attribute">
+            <field name="name">Minimum afname</field>
+        </record>
+         <record id="product_attribute_16" model="product.attribute">
+            <field name="name">Neck finish</field>
+        </record>
+         <record id="product_attribute_17" model="product.attribute">
+            <field name="name">Name</field>
+        </record>
+          <record id="product_attribute_18" model="product.attribute">
+            <field name="name">Quantity Per Box</field>
+        </record>
+         <record id="product_attribute_19" model="product.attribute">
+            <field name="name">Size</field>
+        </record>
+         <record id="product_attribute_20" model="product.attribute">
+            <field name="name">Type Of corner Protector</field>
+        </record>
+          <record id="product_attribute_21" model="product.attribute">
+            <field name="name">Weight</field>
+        </record>
+
+        <record id="product_attribute_23" model="product.attribute">
+            <field name="name">Available colour(s) jar</field>
+        </record>
+
+        <record id="product_attribute_24" model="product.attribute">
+            <field name="name">Available colour(s) Cover</field>
+        </record>
+
+        <record id="product_attribute_25" model="product.attribute">
+            <field name="name">Material cover</field>
+        </record>
+
+         <record id="product_attribute_26" model="product.attribute">
+            <field name="name">Volume (ml)</field>
+        </record>
+
+
+        </data>
+</odoo>

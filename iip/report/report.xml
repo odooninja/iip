@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_product_label"
+            string="Products Labels"
+            model="product.product"
+            report_type="qweb-pdf"
+            name="iip.report_productlabel"
+            file="iip.report_productlabel"/>
+
+        <report
+            id="report_product_template_label"
+            string="Products Labels"
+            model="product.template"
+            report_type="qweb-pdf"
+            name="iip.report_producttemplatelabel"
+            file="iip.report_producttemplatelabel"/>
+        </data>
+    </odoo>

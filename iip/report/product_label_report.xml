@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+<template id="report_product_label_document">
+    <div class="col-xs-4" style="padding:0;">
+        <table style="border-spacing:0;margin-bottom:0;height:122px;" class="table">
+            <thead>
+                <tr style="width: 3in;">
+                    <td style="border: 2px solid black;width: 2.63in;" colspan="2" class="col-xs-8 danger">
+                        <t t-if="label.default_code">
+                            [<strong t-field="label.default_code"/>]
+                        </t>
+                        <strong t-field="label.name"/>
+                    </td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="width: 3in;">
+                    <td style="border: 2px solid black;width: 2.63in;" colspan="2" class="col-xs-5">
+                        <t t-if="label.weight">
+                            <strong>Weight:</strong>
+                            <strong t-field="label.weight"/>
+                        </t>
+
+                    </td>
+                </tr>
+                <tr style="width: 3in;">
+                    <td style="border: 2px solid black;width: 2.63in;" colspan="2" class="col-xs-5">
+                        <t t-if="label.s_no">
+                            <strong>Serial Number:</strong>
+                            <strong t-field="label.s_no"/>
+                        </t>
+
+                    </td>
+                </tr>
+                <tr style="width: 3in;">
+                <td style="border: 2px solid black;width: 2.63in;" colspan="2" class="col-xs-5">
+                        <t t-if="label.date_production">
+                            <strong t-field="label.date_production"/>
+
+                        </t>
+
+                    </td>
+                    </tr>
+                <tr style="width: 3in;" t-foreach="label.product_image_ids" t-as="images">
+                    <td style="border: 2px solid black;width: 2.63in;" colspan="2" class="col-xs-5" t-if="images.available">
+                        <img t-att-src="'data:image/png;base64,%s' % images.image" style="max-height: 45px;"/>
+                    </td>
+                </tr>
+
+
+                <tr style="width: 3in;">
+                    <td style="border: 2px solid black;text-align: center; vertical-align: middle;" class="col-xs-5">
+                        <img t-if="label.barcode" t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('EAN13', label.barcode, 600, 150)" style="width:100%;height:20%;"/>
+                        <span t-field="label.barcode"/>
+
+                    </td>
+
+                    <td style="border: 2px solid black; text-align: center;" class="col-xs-7">
+                        <h4>
+                            <strong t-field="label.company_id.currency_id.symbol"/>
+                            <strong t-field="label.list_price"/>
+                        </h4>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<template id="report_productlabel">
+    <t t-call="report.html_container">
+        <div class="page">
+            <t t-foreach="docs" t-as="label">
+                <t t-call="iip.report_product_label_document">
+                    <t t-set="label" t-value="label"/>
+                </t>
+            </t>
+        </div>
+    </t>
+</template>
+</data>
+</odoo>

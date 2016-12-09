@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_label_form_view" model="ir.ui.view">
+        <field name="name">product.template.label.form</field>
+        <field name="model">product.template</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="8" />
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="name">Product Template</attribute>
+            </xpath>
+            <field name="barcode" position="after">
+                 <field name="s_no" attrs="{'invisible': [('product_variant_count', '>', 1)]}"/>
+            </field>
+
+    </field>
+    </record>
+            <record id="product_template_label_form_view" model="ir.ui.view">
+        <field name="name">product.image.label.form</field>
+        <field name="model">product.image</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="8" />
+        <field name="inherit_id" ref="website_sale.view_product_image_form"/>
+        <field name="arch" type="xml">
+            <field name="image" position="before">
+                <group>
+                    <field name="available" string="Available"/>
+                </group>
+            </field>
+
+
+            </field>
+        </record>
+
+    <record id="product_template_digressive_setup" model="ir.ui.view">
+        <field name="name">product.template.product.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+           <xpath expr="//page[@name='notes']" position="after">
+                <page string="Digressive Pricing">
+
+                    <field name="product_digressive_pricing_ids">
+                    <tree>
+                        <field name="quantity"/>
+                        <field name="amount"/>
+                    </tree>
+                    </field>
+
+                </page>
+            </xpath>
+    </field></record>
+
+    <record id="product_product_inherit_form_view_cost_structure" model="ir.ui.view">
+            <field name="name">cost_structure_product_product_inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="mrp_account.product_product_inherit_form_view_cost_structure"/>
+            <field name="groups_id" eval="[(4, ref('mrp.group_mrp_user'))]"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <field name="mo_count" invisible="1"/>
+                    <button name="%(mrp_account.action_cost_struct_product_template)d" type="action"
+                        class="oe_stat_button" icon="fa-dollar" string="Cost Analysis" attrs="{'invisible': [('mo_count', '=', 0)]}">
+                    </button>
+                </div>
+            </field>
+        </record>
+</odoo>
